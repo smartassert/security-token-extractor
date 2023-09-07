@@ -6,14 +6,14 @@ namespace SmartAssert\SecurityTokenExtractor;
 
 use Psr\Http\Message\RequestInterface;
 
-class TokenExtractor
+readonly class TokenExtractor
 {
     public const DEFAULT_HEADER_NAME = 'Authorization';
     public const DEFAULT_VALUE_PREFIX = 'Bearer ';
 
     public function __construct(
-        public readonly string $headerName = self::DEFAULT_HEADER_NAME,
-        public readonly string $valuePrefix = self::DEFAULT_VALUE_PREFIX,
+        public string $headerName = self::DEFAULT_HEADER_NAME,
+        public string $valuePrefix = self::DEFAULT_VALUE_PREFIX,
     ) {
     }
 
